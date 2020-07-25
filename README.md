@@ -25,6 +25,6 @@ nstall.packages("NAME_PACKAGE")
  runGitHub("CPM-Asteroid", "safwanaljbaae")
  ```
 # License<a name="citing"></a>
-Please refer to the README.txt and LICENSE.txt files, available in this repository, for further details.
+Please refer to the [README.txt](https://github.com/safwanaljbaae/CPM-ASTEROID/blob/master/README.md) and LICENSE.txt files, available in this repository, for further details.
 
 # Citing<a name="citing"></a>
