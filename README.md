@@ -1,4 +1,4 @@
-# CPM-ASTEROID
+# CPM-ASTEROID (Close Proximity Motion relative to an Asteroid)
 
 
 # Introduction<a name="introduction"></a>
