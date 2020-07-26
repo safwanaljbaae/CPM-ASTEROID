@@ -35,6 +35,6 @@ Please refer to the [README.txt](https://github.com/safwanaljbaae/CPM-ASTEROID/b
 # Contact Us="Contact_Us"></a>
 For any questions, requests or suggestions, you can contact us at:  
 
-Safwan Aljbaae         : <a href="mailto:safwan.aljbaae@gmail.com">safwan.aljbaae@gmail.com</a>  
-Diogo Merguizo Sanchez : <a href="mailto:sanchezfisica@gmail.com">sanchezfisica@gmail.com</a>
+Safwan Aljbaae         : <a href="mailto:safwan.aljbaae@gmail.com">safwan.aljbaae@gmail.com</a>, <a href="mailto:safwan.aljbaae@inpe.br">safwan.aljbaae@inpe.br</a>   
+Diogo Merguizo Sanchez : <a href="mailto:diogo.sanchez@inpe.br">diogo.sanchez@inpe.br</a>
 
