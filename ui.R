@@ -147,8 +147,10 @@ ui <- shinyUI(fluidPage(
         pageWithSidebar(
            headerPanel(' '),
               sidebarPanel(
-                 p("For questions or comments about this data sets, please contact", style = "color:black; font-family: 'times'; font-size:14pt"),
+                 p("For any questions, requests or suggestions, you can contact us at", style = "color:black; font-family: 'times'; font-size:14pt"),
                  p("Safwan Aljbaae (safwan.aljbaae@gmail.com)", style = "color:black; font-family: 'times'; font-size:14pt"),
+                 p("Diogo Merguizo Sanchez (sanchezfisica@gmail.com)", style = "color:black; font-family: 'times'; font-size:14pt"),
+                 width = 5
 
               ),
               mainPanel(
