@@ -1,5 +1,3 @@
-# CPM-ASTEROID (Close Proximity Motion relative to an Asteroid)
-
 
 # Introduction<a name="introduction"></a>
 The Close Proximity Motion relative to an Asteroid (CPM-ASTEROID) is a repository where we acquire some results of our researches on the dynamics and control in the vicinity of irregular-shaped asteroids. Our results are easily accessible using the [**Shiny**](https://www.shinyapps.io/) framework for [**R**](https://www.r-project.org/) programming language
@@ -10,12 +8,17 @@ The Close Proximity Motion relative to an Asteroid (CPM-ASTEROID) is a repositor
  
  - Open R session   
  
- - Install next packages: **shiny**, **ggplot2**, **plotly**, **shinyAce**, **vembedr**, **rgl**, **gmailr**  
+ - Install next packages: **shiny**, **ggplot2**, **plotly**, **shinyAce**, **vembedr**, **rgl**, **gmailr**, **data.table**, **xfun**  
  
    ... You can install these packages by running the command in an R session  
    
 ```R
-nstall.packages("NAME_PACKAGE")  
+nstall.packages("NAME_PACKAGE")
+```  
+or __
+
+```R
+install.packages("NAME_PACKAGE", type = "binary")] 
 ```  
 
  - Access our Results using the next two commends in an R session  
@@ -28,3 +31,10 @@ nstall.packages("NAME_PACKAGE")
 Please refer to the [README.txt](https://github.com/safwanaljbaae/CPM-ASTEROID/blob/master/README.md) and [LICENSE.txt](https://github.com/safwanaljbaae/CPM-ASTEROID/blob/master/LICENSE) files, available in this repository, for further details.
 
 # Citing<a name="citing"></a>
+
+# Contact Us="Contact_Us"></a>
+For any questions, requests or suggestions, you can contact us at:  
+
+Safwan Aljbaae         : <a href="mailto:safwan.aljbaae@gmail.com">safwan.aljbaae@gmail.com</a>  
+Diogo Merguizo Sanchez : <a href="mailto:sanchezfisica@gmail.com">sanchezfisica@gmail.com</a>
+
