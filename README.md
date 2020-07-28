@@ -13,7 +13,7 @@ The Close Proximity Motion relative to an Asteroid (CPM-ASTEROID) is a repositor
    ... You can install these packages by running the command in an R session  
    
 ```R
-nstall.packages("NAME_PACKAGE")
+install.packages("NAME_PACKAGE")
 ```  
 or __
 
