@@ -15,7 +15,7 @@ The Close Proximity Motion relative to an Asteroid (CPM-ASTEROID) is a repositor
 ```R
 install.packages("NAME_PACKAGE")
 ```  
-or __
+or 
 
 ```R
 install.packages("NAME_PACKAGE", type = "binary")] 
