@@ -1,0 +1,32 @@
+.fontDefault, body, a, #mainContent1, #mainContent2
+{ 
+  font-size:11px;
+  } 
+
+dt.credits,  a.credits {
+    font-size: 11px;
+}
+
+
+
+#menu2 {width: 198px;}
+
+#mainContent2 {left: 220px;}
+
+
+/*- Menu 0b--------------------------- */
+#menu0b {width: 160px;}
+
+
+/* Centering */
+
+#mainContent1 .pContainer, #mainContent2 .pContainer
+{  
+  max-width: 760px;
+  min-width: 610px;
+}
+
+#mainContent2 p, #mainContent2 ul
+{  
+  max-width: 550px;
+}

@@ -1,0 +1,260 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+      <title>
+         CPM-Asteroid
+      </title>
+      <link rel="stylesheet"
+            href="persistent_main.css"
+            type="text/css" media="screen"
+      />
+      <link rel="stylesheet"
+            href="persistent_main_tables.css"
+            type="text/css" media="screen"
+      />
+      <link rel="stylesheet"
+            href="font-sizes/m_main.css"
+            type="text/css"
+            title="fsm-csd" media="screen"
+      />
+      <link
+              rel="stylesheet"
+              href="color-schemes/d_main.css"
+              type="text/css"
+              title="fsm-csd"
+              media="screen"
+      />
+      <link
+              rel="stylesheet"
+              href="font-sizes/m_main_tables.css"
+              type="text/css"
+              title="fsm-csd"
+              media="screen"
+      />
+      <link
+              rel="stylesheet"
+              href="color-schemes/d_main_tables.css"
+              type="text/css"
+              title="fsm-csd"
+              media="screen"/>
+      <script type="text/javascript" src="javascript/cookies.js"></script>
+      <script type="text/javascript" src="javascript/basicTools.js"></script>
+      <script type="text/javascript" src="javascript/common.js"></script>
+      <script type="text/javascript" src="javascript/WebBuilder.js"></script>
+   </head>
+   <style type="text/css">
+       #modalContainer{
+         background-color:transparent;
+         position:absolute;
+         width:100%;
+         height:100%;
+         top:0px;
+         left:0px;
+         z-index:10000;
+         background-image:url(tp.png); /* required by MSIE to prevent actions on lower z-index elements */
+      }
+      #alertBox {
+         position:relative;
+         width:300px;
+         min-height:100px;
+         margin-top:50px;
+         border:2px solid #000;
+         background-color:#F2F5F6;
+         background-image:url(alert.png);
+         background-repeat:no-repeat;
+         background-position:20px 30px;
+      }
+      #modalContainer > #alertBox {
+         position:fixed;
+      }
+      #alertBox h1 {
+         margin:0;
+         font:bold 1.5em verdana,arial;
+         background-color:#78919B;
+         color:#FFF;
+         border-bottom:1px solid #000;
+         padding:2px 0 2px 5px;
+      }
+      #alertBox p {
+         font:1.2em verdana,arial;
+         height:50px;
+         padding-left:5px;
+         margin-left:55px;
+      }
+      #alertBox #closeBtn {
+         display:block;
+         position:relative;
+         margin:5px auto;
+         padding:3px;
+         border:2px solid #000;
+         width:70px;
+         font:0.7em verdana,arial;
+         text-transform:uppercase;
+         text-align:center;
+         color:#FFF;
+         background-color:#78919B;
+         text-decoration:none;
+      }
+      /* unrelated styles */
+      #mContainer {
+         position:relative;
+         width:600px;
+         margin:auto;
+         padding:5px;
+         border-top:2px solid #000;
+         border-bottom:2px solid #000;
+         font:0.7em verdana,arial;
+      }
+      h1,h2 {
+         margin:0;
+         padding:4px;
+         font:bold 1.5em verdana;
+         border-bottom:1px solid #000;
+      }
+      code {
+         font-size:1.2em;
+         color:#069;
+      }
+      #credits {
+         position:relative;
+         margin:25px auto 0px auto;
+         width:350px; 
+         font:0.7em verdana;
+         border-top:1px solid #000;
+         border-bottom:1px solid #000;
+         height:90px;
+         padding-top:4px;
+      }
+      #credits img {
+         float:left;
+         margin:5px 10px 5px 0px;
+         border:1px solid #000000;
+         width:80px;
+         height:79px;
+      }
+      .important {
+         background-color:#F5FCC8;
+         padding:2px;
+      }
+      code span {
+         color:green;
+      }
+   </style>
+   <script type="text/javascript">
+      function anti_clic() {
+         alert('Sorry right click is disabled in this site ...');
+         return false;
+      }document.onmousedown=BoutonDroit;
+   </script>
+   <script type="text/javascript">
+      var ALERT_TITLE = "Oops!";
+      var ALERT_BUTTON_TEXT = "Ok";
+      if(document.getElementById) {
+         window.alert = function(txt) {createCustomAlert(txt);}
+      }
+      function createCustomAlert(txt) {
+         d = document;
+         if(d.getElementById("modalContainer")) return;
+         mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+         mObj.id = "modalContainer";
+         mObj.style.height = d.documentElement.scrollHeight + "px";
+         alertObj = mObj.appendChild(d.createElement("div"));
+         alertObj.id = "alertBox";
+         if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+         alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+         alertObj.style.visiblity="visible";
+         h1 = alertObj.appendChild(d.createElement("h1"));
+         h1.appendChild(d.createTextNode(ALERT_TITLE));
+         msg = alertObj.appendChild(d.createElement("p"));
+         //msg.appendChild(d.createTextNode(txt));
+         msg.innerHTML = txt;
+         btn = alertObj.appendChild(d.createElement("a"));
+         btn.id = "closeBtn";
+         btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+         btn.href = "#";
+         btn.focus();
+         btn.onclick = function() { removeCustomAlert();return false; }
+         alertObj.style.display = "block";
+      }
+      function removeCustomAlert() {
+         document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+      }
+   </script>
+      <body onContextMenu="return anti_clic();" onload="mainOnload('client',1000)" onunload="mainOnunload()">
+      <!---------------------------------------------------------------------------------------------------->
+      <!----  rolling_text ----->
+      <marquee bgcolor=AliceBlue loop="10" scrollamount="2.5" width="100%" DIRECTION="left">
+         <!--<font color=AliceBlue size="+1">Thank you for visiting our website </font>-->
+         <font face="times new roman" color="RGB(12,52,61)" size="5">
+            CPM-Asteroid : Please note that this site is under development so you will notice a lot of amendments on
+            each visit
+         </font> 
+      </marquee>
+      <!---------------------------------------------------------------------------------------------------->
+      <div id="banner1">
+         <div id="banner1CPM">
+            <a class="colorSystemLink" href="index.html" title="CPM-Asteroid home page">
+               <H2>
+                  <font face="times new roman" size="7">
+                     CPM-Asteroid
+                  </font>
+               </H2>
+
+            </a>
+         </div>
+         <div id="banner1CPM2" class="colorGray1">
+            <font face="times new roman" color="RGB(12,52,61)" size="5">
+               Close Proximity Motion relative to an Asteroid
+            </font>
+         </div>
+         <!---------------------------------------------------------------------------------------------------->
+         <!----  Menu ----->
+         <div id="menu1">
+            <div id="tabsH">
+               <ul>
+                  <li><a href="index.html" title="CPM-Asteroid Home page"><span class="colorMenu">
+                         <font size="5">Home</font>&nbsp;</span>
+                      </a>
+                  </li>
+                  <li><a href="Objects_CPM.html" title="CPM objects"><span class="colorMenu">
+                         <font size="5">Objects</font>&nbsp;</span>
+                      </a>
+                  </li>
+                  <li><a href="Apophis.html" title="(99942) Apophi"><span class="colorMenu">
+                         <font size="5">(99942) Apophi</font>&nbsp;</span>
+                      </a>
+                  </li>
+                  <li><a href="Contact_CPM.html" title="Contact us"><span class="colorMenuActive">
+                         <font size="5">Contact</font>&nbsp;</span>
+                      </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <!---------------------------------------------------------------------------------------------------->
+         <div id="banner2">
+            <div id="banner2Contact">
+               <a class="colorSystemLink" href="Contact_CPM.html">
+                  <font size="4">Contact</font>&raquo;
+               </a>
+            </div>
+         </div>	
+         <!---------------------------------------------------------------------------------------------------->
+         <div id="mainContent1">
+            <div class="pContainer">
+               <div id="introCPMStitle">
+                  <span class="colorCPMBlue">C</span>lose<br/>
+                  <span class="colorCPMBlue">P</span>roximity <br/>
+                  <span class="colorCPMBlue">M</span>otion relative to an<br/>
+                  <span class="colorCPMBlue">Asteroid</span><br/>
+               </div>
+            </div>
+            <p id="lettrine">
+               The
+
+            </p>
+
+         </div>
+      </div>
+   </body>
+</html>
