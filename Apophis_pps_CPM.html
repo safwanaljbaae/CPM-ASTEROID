@@ -41,7 +41,7 @@
       <script type="text/javascript" src="javascript/basicTools.js"></script>
       <script type="text/javascript" src="javascript/common.js"></script>
       <script type="text/javascript" src="javascript/WebBuilder.js"></script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
    </head>
    <style type="text/css">
@@ -270,7 +270,7 @@
 //                   document.write('"FIGURES/'+PPS.value+'/'+perturbation.value+'/map_'+energy.value+'.png"');
                   document.write("<br /><br />");
                   document.write("<br /><br />");
-                  document.write('<a href="Apophis_pps_CPM.html"><input type="button" value="Back" style="font-size:24px; width: 8%; height: 35px;"></a>');
+                  document.write('<a href="Apophis_pps_CPM.html"><input type="button" value="Back" style="font-size:16px; width: 8%; height: 25px;;"></a>');
 //                   alert('"FIGURES/'+PPS.value+'/'+perturbation.value+'/map_'+energy.value+'.png"');
                }
             </script>
@@ -308,11 +308,11 @@
                 
                 $$H = \frac{1}{2}(\dot{x}^2+\dot{y}^2+\dot{z}^2) - \frac{1}{2} \omega^{2}(x^2 + y^2) -  U \\$$
                 
-                where: $x,y,x$ and $\dot{x},\dot{y},\dot{x}$ are the location and velocity of the particle in the body-fixed frame of reference. $U$ is the gravitational potential of the asteroid calculated considering its polyhedral shape.
+                where: \(x,y,x\) and \(\dot{x},\dot{y},\dot{x}\) are the location and velocity of the particle in the body-fixed frame of reference. \(U\) is the gravitational potential of the asteroid calculated considering its polyhedral shape.
                 
                 <br /><br /> 
                 
-                The equatorial prograde motion of a massless particle around Apophis is determined numerically with the Runge-Kutta 7/8 integrator with variable step size, optimized for the accuracy of $10^{-12}$, covering a period of 1000 days. However, this does not necessarily ensure that the nature of all orbits remains unchanged in time, because some orbits can become chaotic as time goes on. We distributed our initial conditions in the y-axis, with $x_{0} = z_{0} = \dot{y}_{0} = \dot{z}_{0} = 0$ and $\dot{x}_{0}$ was computed according to the equation of the mechanical energy. We variy $y_{0}$ between 0.5 and 10 km from the asteroid centre with an interval of 0.1 km.
+                The equatorial prograde motion of a massless particle around Apophis is determined numerically with the Runge-Kutta 7/8 integrator with variable step size, optimized for the accuracy of \(10^{-12}\), covering a period of 1000 days. However, this does not necessarily ensure that the nature of all orbits remains unchanged in time, because some orbits can become chaotic as time goes on. We distributed our initial conditions in the y-axis, with \(x_{0} = z_{0} = \dot{y}_{0} = \dot{z}_{0} = 0\) and \(\dot{x}_{0}\) was computed according to the equation of the mechanical energy. We variy \(y_{0}\) between 0.5 and 10 km from the asteroid centre with an interval of 0.1 km.
                 
                 <br /><br /> 
                 
@@ -320,25 +320,25 @@
 
                 <br /><br /><br />
                 Surfaces of section: &nbsp;&nbsp;
-                <select id="PPS" SIZE="1" style="width:65%;">
+                <select id="PPS" SIZE="1" style="width:60%;">
                    <option value="Y_POINCARE">y-axis </option>
                    <option value="X_POINCARE">x-axis</option>
                 </select>
                 <br />
                 
                 Mechanical energy: &nbsp;&nbsp;
-                <select id="energy" SIZE="1" style="width:65%;">
+                <select id="energy" SIZE="1" style="width:60%;">
                    <option value="0.100E-09">0.100e-09 </option>
                    <option value="0.200E-09">0.200e-09 </option>
                 </select>
                 
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" onclick="getIndex()" value="Go" style="font-size:18px; width: 8%; height: 35px;">
+                <input type="button" onclick="getIndex()" value="Go" style="font-size:16px; width: 8%; height: 25px;">
 
                 <br />
                 
                 Perturbations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
-                <select id="perturbation" SIZE="1" style="width:65%;">
+                <select id="perturbation" SIZE="1" style="width:60%;">
                    <option value="WITHOUT_CE">Only the polyhedral shape of Apophis </option>
                    <option value="WITH_CE">polyhedral shape of Apophis + Planets </option>
                    <option value="Y_WITH_CE_SRP">polyhedral shape of Apophis + Planets + SRP </option>
