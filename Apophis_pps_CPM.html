@@ -257,8 +257,8 @@
                   document.write('<link rel="stylesheet" href="font-sizes/m_main_tables.css" type="text/css" title="fsm-csd" media="screen"/>');
                   document.write('<link rel="stylesheet" href="color-schemes/d_main_tables.css" type="text/css" title="fsm-csd" media="screen"/>');
                   document.write('</head>');
-                  document.write('<a href="FIGURES/'+PPS.value+'/'+perturbation.value+'/map_'+energy.value+'.png">');
-                  document.write('<img src="FIGURES/'+PPS.value+'/'+perturbation.value+'/map_'+energy.value+'.png" ');
+                  document.write('<a href="FIGURES/POINCARE_'+PPS.value+'/'+PPS.value+'_'+perturbation.value+'/map_'+energy.value+'_'+PPS.value+'.png">');
+                  document.write('<img src="FIGURES/POINCARE_'+PPS.value+'/'+PPS.value+'_'+perturbation.value+'/map_'+energy.value+'_'+PPS.value+'.png" ');
                   document.write('width=1200 height=800');
                   document.write('border=3');
                   document.write('style="border-color:#000000"');
@@ -266,7 +266,7 @@
                   document.write('onMouseOver="poplink("ee"); " onMouseOut="killlink()">');
                   document.write('</a>');
                   document.write('<br /><br />');
-//                   document.write('"FIGURES/'+PPS.value+'/'+perturbation.value+'/map_'+energy.value+'.png"');
+                  document.write('"FIGURES/POINCARE_'+PPS.value+'/'+PPS.value+'_'+perturbation.value+'/map_'+energy.value+'_'+PPS.value+'.png"');
                   document.write("<br /><br />");
                   document.write("<br /><br />");
                   document.write('<a href="Apophis_pps_CPM.html"><input type="button" value="Back" style="font-size:16px; width: 8%; height: 25px;;"></a>');
@@ -320,15 +320,18 @@
                 <br /><br /><br />
                 Surfaces of section: &nbsp;&nbsp;
                 <select id="PPS" SIZE="1" style="width:60%;">
-                   <option value="Y_POINCARE">y-axis </option>
-                   <option value="X_POINCARE">x-axis</option>
+                   <option value="y">y-axis </option>
+                   <option value="x">x-axis</option>
                 </select>
                 <br />
                 
                 Mechanical energy: &nbsp;&nbsp;
                 <select id="energy" SIZE="1" style="width:60%;">
-                   <option value="0.100E-09">0.100e-09 </option>
-                   <option value="0.200E-09">0.200e-09 </option>
+                   <option value="0.300E-09">0.300e-09 </option>
+                   <option value="1.400E-09">1.400e-09 </option>
+                   <option value="1.900E-09">1.900e-09 </option>
+                   <option value="2.000E-09">2.000e-09 </option>
+                   <option value="2.800E-09">2.800e-09 </option>
                 </select>
                 
                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -340,7 +343,7 @@
                 <select id="perturbation" SIZE="1" style="width:60%;">
                    <option value="WITHOUT_CE">Only the polyhedral shape of Apophis </option>
                    <option value="WITH_CE">polyhedral shape of Apophis + Planets </option>
-                   <option value="Y_WITH_CE_SRP">polyhedral shape of Apophis + Planets + SRP </option>
+                   <option value="WITH_CE_SRP">polyhedral shape of Apophis + Planets + SRP </option>
                   
                 </select>
                 
