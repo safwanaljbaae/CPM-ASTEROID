@@ -249,11 +249,220 @@
                   <span class="colorCPMBlue">Asteroid</span><br/>
                </div>
             </div>
-            <p id="lettrine">
-               The
-
-            </p>
-
+          
+            <script language="JavaScript">
+               function verifSelection() {
+                  if (document.mail_form.champ1.value == "") {
+                     alert("Please enter your nome")
+                     return false
+                  } 
+                  if (document.mail_form.champ2.value == "") {
+                     alert("Please enter the subject of your message")
+                     return false
+                  } 
+                  if (document.mail_form.zone_email1.value == "") {
+                     alert("Please enter your E-mail")
+                     return false
+                  }
+                  invalidChars = " /:,;'"
+                  for (i=0; i < invalidChars.length; i++) {	// does it contain any invalid characters?
+                     badChar = invalidChars.charAt(i)
+                     if (document.mail_form.zone_email1.value.indexOf(badChar,0) > -1) {
+                        alert("Your e-mail address contains invalid characters. Please check")
+                        document.mail_form.zone_email1.focus()
+                        return false
+                     }
+                  }
+                  atPos = document.mail_form.zone_email1.value.indexOf("@",1)			// there must be one "@" symbol
+                  if (atPos == -1) {
+                     alert('Your e-mail does not contain the "@" sign. Please check')
+                     document.mail_form.zone_email1.focus()
+                     return false
+                  }
+                  if (document.mail_form.zone_email1.value.indexOf("@",atPos+1) != -1) {	// and only one "@" symbol
+                     alert('There should be only "@" sign. Please check.')
+                     document.mail_form.zone_email1.focus()
+                     return false
+                  }
+                  periodPos = document.mail_form.zone_email1.value.indexOf(".",atPos)
+                  if (periodPos == -1) {					// and at least one "." after the "@"
+                     alert('You forgot the "." after the "@" sign. Please check')
+                     document.mail_form.zone_email1.focus()
+                     return false
+                  }
+                  if (periodPos+3 > document.mail_form.zone_email1.value.length){	// must be at least 2 characters after the 
+                     alert('There must be at least two characters after the "." Please check.')
+                     document.mail_form.zone_email1.focus()
+                     return false
+                  }
+                  if (document.mail_form.zone_texte1.value == "") {
+                     alert("Please enter your message")
+                     return false
+                  } 
+               } // Fin de la fonction
+            </script>
+            
+            
+            <body>
+               <form name="mail_form" method="post" action="https://hpiers.obspm.fr/icrs-pc/aljbaae/Contact_ASETEP.php" onSubmit="return verifSelection()">
+            
+                  <div align="center"><strong> 
+                     <p id="lettrinetext">	
+                        Please, use the form below to contact me (Safwan Aljbaae) </strong>
+                     </p>
+                  </div>
+                
+                  <br /><br /> <br /><br />
+                  <table align="center" width="70" border="0" cellspacing="0" cellpadding="0" >
+                     <tr>
+                        <td height="16"><div align="center">
+                           <font color="#CC0000" size="2" face="Times New Roman">
+                              <strong>
+                                 <?php
+                                    if ($erreur_champ1) {
+                                       echo(stripslashes($erreur_champ1));
+                                    } else {
+                                       if ($erreur_champ2) {
+                                          echo(stripslashes($erreur_champ2));
+                                       } else {
+                                          if ($erreur_email1) {
+                                             echo(stripslashes($erreur_email1));
+                                          } else {
+                                             if ($erreur_texte1) {
+                                                echo(stripslashes($erreur_texte1));
+                                             } else { } // Fin du else...
+                                          } // Fin du else...
+                                       } // Fin du else...
+                                    } // Fin du else...
+                                 ?>
+                              </strong>
+                           </font></div>
+                        </td>
+                     </tr>
+                  </table>
+               
+                  <table width="900" border="0" align="center">
+                     <tr>
+                        <td width="200">
+                           <div align="right">	
+                              <font face="times new roman" style="font-size:18px; line-height:30px; " >
+                                 Enter your Name: 	
+                              </font>
+                           </div>
+                        </td>
+                       
+                        <td align="center" valign="middle" width="30">
+                           <?php
+                              if ($erreur_champ1) {
+                                 echo($icone);
+                              }
+                           ?>
+                        </td>
+                   
+                        <td>
+                           <input name="champ1" type="text" value="">
+                        </td>
+                     </tr>
+                  </table>
+                             
+                  <table width="900" border="0" align="center">
+                     <tr>
+                        <td width="200">
+                           <div align="right">
+                              <font face="times new roman" style="font-size:18px; line-height:30px; " >
+                                 Message Subject: 
+                              </font>
+                           </div>
+                        </td>
+                      
+                        <td align="center" valign="middle" width="30">
+                           <?php
+                              if ($erreur_champ2) {
+                                 echo($icone);
+                              }
+                           ?>
+                        </td>
+                      
+                        <td>
+                           <input name="champ2" type="text" value="">
+                        </td>
+                     </tr>
+                  </table>
+              
+                  <table width="900" border="0" align="center">
+                     <tr>
+                        <td width="200">
+                           <div align="right">
+                              <font face="times new roman" style="font-size:18px; line-height:30px; " >
+                                 E-mail address: 
+                              </font>
+                           </div>
+                        </td>
+                        <td width="30" align="center" valign="middle">
+                           <?php
+                              if ($erreur_email1) {
+                                 echo($icone);
+                              }
+                           ?>
+                        </td>
+                     
+                        <td>
+                           <input name="zone_email1" type="text" value="">
+                        </td>
+                     </tr>
+                  </table>
+             
+                  <table width="900" border="0" align="center">
+                      <tr>
+                         <td width="200" valign="top">
+                            <div align="right">
+                               <font face="times new roman" style="font-size:18px; line-height:30px; " >
+                                  Enter your Message: 
+                               </font>
+                            </div>
+                         </td>
+                      
+                         <td width="30" align="center" valign="top">
+                            <?php
+                              if ($erreur_texte1) {
+                                 echo($icone);
+                              }
+                            ?>
+                         </td>
+                 
+                         <td>
+                            <textarea name="zone_texte1" cols="45" rows="10"></textarea>
+                         </td>
+                      </tr>
+                   </table>
+                
+                   <table width="900" border="0" align="center"><tr><td valign="top">
+                      <div align="center">
+                         <span class="colorMenu"><input type="reset" name="Reset" value="Delete">
+                         <span class="colorMenu"><input type="submit" name="envoi" value="Send">
+                         <br /><br /> <br /><br /> <br /><br />
+                         <HR WIDTH="75%">
+                         <div align="left">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font face="times new roman" style="font-size:18px; line-height:30px; " >
+                               Please send your comments on this site to 
+                            </font>
+                            <a class="colorSystemLink" href="mailto:safwan.aljbaae@obspm.fr" target="_blank"  title="safwan.aljbaae@obspm.fr">
+                               <font face="times new roman" style="font-size:18px;" >
+                                  safwan.aljbaae(at)obspm.fr 
+                               </font>
+                            </a>
+                         </div>
+                      </div>
+                   </table>
+              </form>            
+            
+            </body>
+            
+            
+            
+            
+            
          </div>
       </div>
    </body>
